@@ -42,9 +42,8 @@ namespace spbgui
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(452, 234);
-            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(336, 20);
+            this.textBox1.Size = new System.Drawing.Size(336, 22);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -123,10 +122,10 @@ namespace spbgui
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "SpamProtection GUI";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.SetAutoSizeMode(System.Windows.Forms.AutoSizeMode.GrowAndShrink);
 
         }
 
