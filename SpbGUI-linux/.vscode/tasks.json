@@ -1,0 +1,47 @@
+// Spam Protection Bot GUI
+// Copyright (C) 2019 - 2021 ALiwoto
+// This file is subject to the terms and conditions defined in
+// file 'LICENSE', which is part of the source code.
+
+{
+        "version": "2.0.0",
+        "tasks": [
+                {
+                        "label": "build",
+                        "command": "dotnet",
+                        "type": "process",
+                        "args": [
+                                "build",
+                                "${workspaceFolder}/SPB.sln",
+                                "/property:GenerateFullPaths=true",
+                                "/consoleloggerparameters:NoSummary"
+                        ],
+                        "problemMatcher": "$msCompile"
+                },
+                {
+                        "label": "debug",
+                        "command": "dotnet",
+                        "type": "process",
+                        "args": [
+                                "debug",
+                                "${workspaceFolder}/SPB.sln",
+                                "/property:GenerateFullPaths=true",
+                                "/consoleloggerparameters:NoSummary"
+                        ],
+                        "problemMatcher": "$msCompile"
+                },
+                {
+                        "label": "watch",
+                        "command": "dotnet",
+                        "type": "process",
+                        "args": [
+                                "watch",
+                                "run",
+                                "${workspaceFolder}/SPB.sln",
+                                "/property:GenerateFullPaths=true",
+                                "/consoleloggerparameters:NoSummary"
+                        ],
+                        "problemMatcher": "$msCompile"
+                }
+        ]
+}
