@@ -14,6 +14,12 @@ namespace spbgui
 
         private void Okay_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show(text: "Enter ID or Username", caption: "Error", buttons:MessageBoxButtons.OK, icon: MessageBoxIcon.Exclamation);
+                return;
+            }
+            label4.Text = $"Query: {textBox1.Text}";
             spbgui.backend.ApiClass data;
             try
             {
@@ -44,7 +50,7 @@ namespace spbgui
             label2.Text += $"Intellivoid Accounts verified: {data.Results.Attributes.IntellivoidAccountsVerified}\n";
             label2.Text += $"Language: {data.Results.LanguagePrediction.Language}";
 
-            label3.Text = $"Private telegram ID: {data.Results.PrivateTelegramId}";
+            label3.Text = $"Private Telegram ID: {data.Results.PrivateTelegramId}";
             }
             catch (System.NullReferenceException)
             {
@@ -103,6 +109,11 @@ namespace spbgui
             {
                 Clipboard.SetText(label3.Text);
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

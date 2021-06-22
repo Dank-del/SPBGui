@@ -12,6 +12,21 @@ namespace spbgui.backend
 
         [JsonProperty("results")]
         public Results Results { get; set; }
+
+        [JsonProperty("error")]
+        public ErrorClass ErrorError { get; set; }
+    }
+
+    public partial class ErrorClass
+    {
+        [JsonProperty("error_code")]
+        public long ErrorCode { get; set; }
+
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("message")]
+        public string Message { get; set; }
     }
 
     public partial class Results
