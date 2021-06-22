@@ -27,6 +27,8 @@ namespace SPB.Client
         public const string EntryPicNameInRes = "SwordEntry";
         public const string FirstLabelNameInRes = "Label1";
         public const string NoticeLabelNameInRes = "Label2";
+        public const string LookupButtonNameInRes = "Button1";
+        public const string ExitButtonNameInRes = "Button2";
         /// <summary>
         /// This is 8.
         /// </summary>
@@ -59,6 +61,8 @@ namespace SPB.Client
         public FlatElement FirstFlatElement { get; private set; }
         public FlatElement UserNoticeElement { get; private set; }
 		public InputElement UserInputElement { get; private set; }
+		public ButtonElement LookupButtonElement { get; private set; }
+		public ButtonElement ExitButtonElement { get; private set; }
 
         public Texture2D BackGroundTexture { get; private set; }
         internal RequestType Request { get; set; }

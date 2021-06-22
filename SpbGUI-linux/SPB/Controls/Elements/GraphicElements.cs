@@ -120,6 +120,20 @@ namespace SPB.Controls.Elements
 		/// the real position of this element on its owner.
 		/// </summary>
 		public virtual Vector2 RealPosition { get; protected set; }
+		public virtual float RealX
+		{
+			get
+			{
+				return RealPosition.X;
+			}
+		}
+		public virtual float RealY
+		{
+			get
+			{
+				return RealPosition.Y;
+			}
+		}
 		/// <summary>
 		/// the position of this element on the big father.
 		/// </summary>

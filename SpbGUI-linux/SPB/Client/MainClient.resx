@@ -80,6 +80,12 @@
   <data name="NoticeLabel_In_Main_Form_E1" xml:space="preserve">
     <value>Please enter a username or user ID:</value>
   </data>
+  <data name="LookupButton_In_Main_Form_E1" xml:space="preserve">
+    <value>Lookup</value>
+  </data>
+  <data name="ExitButton_In_Main_Form_E1" xml:space="preserve">
+    <value>Exit</value>
+  </data>
   <data name="FirstLabel_In_Main_Form_E2" xml:space="preserve">
     <value>Checking Updates...</value>
   </data>
@@ -91,6 +97,12 @@
   </data>
   <data name="Label2_Name" xml:space="preserve">
     <value>NoticeLabel_In_Main_Form</value>
+  </data>
+  <data name="Button1_Name" xml:space="preserve">
+    <value>LookupButton_In_Main_Form</value>
+  </data>
+  <data name="Button2_Name" xml:space="preserve">
+    <value>ExitButton_In_Main_Form</value>
   </data>
   <!--
 	  These resources are not for this project. These are for my own game,

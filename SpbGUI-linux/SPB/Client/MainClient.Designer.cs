@@ -141,31 +141,45 @@ namespace SPB.Client
 			this.FirstFlatElement = new(this);
 			this.UserNoticeElement = new(this);
 			this.UserInputElement = new(this);
+			this.LookupButtonElement = new(this);
+			this.ExitButtonElement = new(this);
 			this.LoadMFBackGround();
 			//---------------------------------------------
 			//names:
 			this.FirstFlatElement.SetLabelName(FirstLabelNameInRes);
 			this.UserNoticeElement.SetLabelName(NoticeLabelNameInRes);
+			this.LookupButtonElement.SetLabelName(LookupButtonNameInRes);
+			this.ExitButtonElement.SetLabelName(ExitButtonNameInRes);
 			//status:
 			this.FirstFlatElement.SetStatus(1);
 			this.UserNoticeElement.SetStatus(1);
 			this.UserInputElement.SetStatus(1);
+			this.LookupButtonElement.SetStatus(1);
+			this.ExitButtonElement.SetStatus(1);
 			//fontAndTextAligns:
 			this.FirstFlatElement.ChangeFont(this.FontManager.GetSprite(SPB_Fonts.SPB_tt_regular, 26));
 			this.UserNoticeElement.ChangeFont(this.FontManager.GetSprite(SPB_Fonts.SPB_tt_regular, 26));
 			this.UserInputElement.ChangeFont(this.FontManager.GetSprite(SPB_Fonts.SPB_tt_regular, 25));
+			this.LookupButtonElement.ChangeFont(this.FontManager.GetSprite(SPB_Fonts.SPB_tt_regular, 23));
+			this.ExitButtonElement.ChangeFont(this.FontManager.GetSprite(SPB_Fonts.SPB_tt_regular, 23));
 			this.FirstFlatElement.ChangeAlignmation(StringAlignmation.MiddleCenter);
 			this.UserNoticeElement.ChangeAlignmation(StringAlignmation.MiddleCenter);
 			this.UserInputElement.ChangeAlignmation(StringAlignmation.MiddleCenter);
+			this.LookupButtonElement.ChangeAlignmation(StringAlignmation.MiddleCenter);
+			this.ExitButtonElement.ChangeAlignmation(StringAlignmation.MiddleCenter);
 			//priorities:
 			this.FirstFlatElement.ChangePriority(ElementPriority.Normal);
 			this.UserNoticeElement.ChangePriority(ElementPriority.High);
 			this.UserInputElement.ChangePriority(ElementPriority.Normal);
+			this.LookupButtonElement.ChangePriority(ElementPriority.High);
+			this.ExitButtonElement.ChangePriority(ElementPriority.High);
 			//sizes:
 			this.FirstFlatElement.ChangeSize(this.Width / 6, this.Height / 6);
 			this.UserNoticeElement.ChangeSize(2 * (this.Width / 7) + 
 				(2 * SandBoxBase.from_the_edge), this.Height / 7);
 			this.UserInputElement.ChangeSize(2 * (this.Width / 7), default);
+			this.LookupButtonElement.ChangeSize();
+			this.ExitButtonElement.ChangeSize();
 			//ownering:
 			//locations:
 			this.FirstFlatElement.ChangeLocation((this.Width - FirstFlatElement.Width) -
@@ -174,24 +188,40 @@ namespace SPB.Client
 			this.UserInputElement.ChangeLocation((9 * (this.Width / 10)) - 
 				this.UserInputElement.Width, (3 * (this.Height / 5)) -
 				this.UserInputElement.Height);
-			this.UserNoticeElement.ChangeLocation(this.UserInputElement.RealPosition.X +
+			this.LookupButtonElement.ChangeLocation(this.UserInputElement.RealX + 
+				(this.UserInputElement.Width / 2) + SandBoxBase.from_the_edge,
+				this.UserInputElement.RealY + this.UserInputElement.Height + 
+			SandBoxBase.from_the_edge);
+			this.ExitButtonElement.ChangeLocation(this.UserInputElement.RealX + 
+				(this.UserInputElement.Width / 2) - SandBoxBase.from_the_edge -
+				this.ExitButtonElement.Width,
+				this.LookupButtonElement.RealY);
+			this.UserNoticeElement.ChangeLocation(this.UserInputElement.RealX +
 				(this.UserInputElement.Width / 2) - (this.UserNoticeElement.Width / 2),
-				this.UserInputElement.RealPosition.Y - this.UserNoticeElement.Height -
+				this.UserInputElement.RealY - this.UserNoticeElement.Height -
 				SandBoxBase.from_the_edge);
 			//movements:
 			//colors:
 			this.UserInputElement.ChangeBorder(InputBorders.Goldenrod);
 			this.FirstFlatElement.ChangeForeColor(Color.DarkSeaGreen);
 			this.UserNoticeElement.ChangeForeColor(Color.WhiteSmoke);
+			this.LookupButtonElement.ChangeBorder(ButtonColors.GreenYellow);
+			this.ExitButtonElement.ChangeBorder(ButtonColors.Red);
 			//enableds:
 			this.FirstFlatElement.Enable(true);
 			this.UserNoticeElement.Enable(true);
 			this.UserInputElement.Enable(true);
+			this.LookupButtonElement.Enable();
+			this.LookupButtonElement.EnableMouseEnterEffect();
+			this.ExitButtonElement.Enable();
+			this.ExitButtonElement.EnableMouseEnterEffect();
 			this.UserInputElement.EnableMouseEnterEffect();
 			this.UserInputElement.Focus(true); // force it to focus itself
 			//texts:
 			this.FirstFlatElement.SetLabelText();
 			this.UserNoticeElement.SetLabelText();
+			this.LookupButtonElement.SetLabelText();
+			this.ExitButtonElement.SetLabelText();
 			//images:
 			this.FirstFlatElement.ChangeImage();
 			//applyAndShow:
@@ -201,6 +231,10 @@ namespace SPB.Client
 			this.UserNoticeElement.Show();
 			this.UserInputElement.Apply();
 			this.UserInputElement.Show();
+			this.LookupButtonElement.Apply();
+			this.LookupButtonElement.Show();
+			this.ExitButtonElement.Apply();
+			this.ExitButtonElement.Show();
 			//events:
 			this.InitializeMainEvents();
 			//---------------------------------------------
@@ -208,7 +242,9 @@ namespace SPB.Client
 			this.ElementManager.AddRange(
 				this.FirstFlatElement,
 				this.UserNoticeElement,
-				this.UserInputElement);
+				this.UserInputElement,
+				this.LookupButtonElement,
+				this.ExitButtonElement);
 			//---------------------------------------------
 			//finalBlow:
 			//---------------------------------------------

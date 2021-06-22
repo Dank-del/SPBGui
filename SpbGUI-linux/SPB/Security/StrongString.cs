@@ -107,6 +107,11 @@ namespace SPB.Security
 		{
 			get
 			{
+				var v = GetValue(); 
+				if (v == null || index >= v.Length)
+				{
+					return default;
+				}
 				return GetValue()[index];
 			}
 		}
