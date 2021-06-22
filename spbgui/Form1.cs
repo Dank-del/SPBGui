@@ -14,6 +14,9 @@ namespace spbgui
 
         private void Okay_Click(object sender, EventArgs e)
         {
+            label2.Text = "";
+            label3.Text = "";
+            label4.Text = "";
             if (textBox1.Text == "")
             {
                 MessageBox.Show(text: "Enter ID or Username", caption: "Error", buttons:MessageBoxButtons.OK, icon: MessageBoxIcon.Exclamation);
@@ -55,6 +58,8 @@ namespace spbgui
             catch (System.NullReferenceException)
             {
                 MessageBox.Show(text:"User not found.", caption:"Notice");
+                label4.Text = "";
+                textBox1.Text = "";
                 return;
             }
         }
