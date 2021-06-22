@@ -290,9 +290,10 @@ namespace SPB.Client
 			if (_loading)
 			{
 				this.BackGroundTexture?.Dispose();
-				var num = DateTime.Now.Second % EntryCount;
-				var name = EntryPicNameInRes + num.ToString();
-				var b = (byte[])this.MyRes.GetObject(name);
+				//var num = DateTime.Now.Second % EntryCount;
+				//const int num = 1;
+				//var name = EntryPicNameInRes + num.ToString();
+				var b = (byte[])this.MyRes.GetObject("background1");
 				if (b == null)
 				{
 					return;
