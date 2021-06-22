@@ -59,6 +59,7 @@ namespace SPB.Client
         /// "Connecting... " and "Checking for Updates..."
         /// </summary>
         public FlatElement FirstFlatElement { get; private set; }
+        public FlatElement BodyFlatElement { get; private set; }
         public FlatElement UserNoticeElement { get; private set; }
 		public InputElement UserInputElement { get; private set; }
 		public ButtonElement LookupButtonElement { get; private set; }

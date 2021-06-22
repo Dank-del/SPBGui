@@ -264,7 +264,8 @@ namespace SPB.Controls.Elements
 			switch (this.Alignmation)
 			{
 				case StringAlignmation.TopLeft:
-					//break;
+					this.TextLocation =  this.Position;
+					break;
 				case StringAlignmation.TopCenter:
 					//break;
 				case StringAlignmation.TopRight:

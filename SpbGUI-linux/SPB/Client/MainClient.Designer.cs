@@ -139,6 +139,7 @@ namespace SPB.Client
 			//news:
 			this.MyRes = new WotoRes(typeof(MainClient));
 			this.FirstFlatElement = new(this);
+			this.BodyFlatElement = new(this);
 			this.UserNoticeElement = new(this);
 			this.UserInputElement = new(this);
 			this.LookupButtonElement = new(this);
@@ -147,34 +148,40 @@ namespace SPB.Client
 			//---------------------------------------------
 			//names:
 			this.FirstFlatElement.SetLabelName(FirstLabelNameInRes);
+			this.BodyFlatElement.SetLabelName(FirstLabelNameInRes);
 			this.UserNoticeElement.SetLabelName(NoticeLabelNameInRes);
 			this.LookupButtonElement.SetLabelName(LookupButtonNameInRes);
 			this.ExitButtonElement.SetLabelName(ExitButtonNameInRes);
 			//status:
 			this.FirstFlatElement.SetStatus(1);
+			this.BodyFlatElement.SetStatus(1);
 			this.UserNoticeElement.SetStatus(1);
 			this.UserInputElement.SetStatus(1);
 			this.LookupButtonElement.SetStatus(1);
 			this.ExitButtonElement.SetStatus(1);
 			//fontAndTextAligns:
 			this.FirstFlatElement.ChangeFont(this.FontManager.GetSprite(SPB_Fonts.SPB_tt_regular, 26));
+			this.BodyFlatElement.ChangeFont(this.FontManager.GetSprite(SPB_Fonts.SPB_tt_regular, 26));
 			this.UserNoticeElement.ChangeFont(this.FontManager.GetSprite(SPB_Fonts.SPB_tt_regular, 26));
 			this.UserInputElement.ChangeFont(this.FontManager.GetSprite(SPB_Fonts.SPB_tt_regular, 25));
 			this.LookupButtonElement.ChangeFont(this.FontManager.GetSprite(SPB_Fonts.SPB_tt_regular, 23));
 			this.ExitButtonElement.ChangeFont(this.FontManager.GetSprite(SPB_Fonts.SPB_tt_regular, 23));
 			this.FirstFlatElement.ChangeAlignmation(StringAlignmation.MiddleCenter);
+			this.BodyFlatElement.ChangeAlignmation(StringAlignmation.TopLeft);
 			this.UserNoticeElement.ChangeAlignmation(StringAlignmation.MiddleCenter);
 			this.UserInputElement.ChangeAlignmation(StringAlignmation.MiddleCenter);
 			this.LookupButtonElement.ChangeAlignmation(StringAlignmation.MiddleCenter);
 			this.ExitButtonElement.ChangeAlignmation(StringAlignmation.MiddleCenter);
 			//priorities:
 			this.FirstFlatElement.ChangePriority(ElementPriority.Normal);
+			this.BodyFlatElement.ChangePriority(ElementPriority.Normal);
 			this.UserNoticeElement.ChangePriority(ElementPriority.High);
 			this.UserInputElement.ChangePriority(ElementPriority.Normal);
 			this.LookupButtonElement.ChangePriority(ElementPriority.High);
 			this.ExitButtonElement.ChangePriority(ElementPriority.High);
 			//sizes:
 			this.FirstFlatElement.ChangeSize(this.Width / 6, this.Height / 6);
+			this.BodyFlatElement.ChangeSize(this.Width / 2, this.Height / 2);
 			this.UserNoticeElement.ChangeSize(2 * (this.Width / 7) + 
 				(2 * SandBoxBase.from_the_edge), this.Height / 7);
 			this.UserInputElement.ChangeSize(2 * (this.Width / 7), default);
@@ -204,11 +211,13 @@ namespace SPB.Client
 			//colors:
 			this.UserInputElement.ChangeBorder(InputBorders.Goldenrod);
 			this.FirstFlatElement.ChangeForeColor(Color.DarkSeaGreen);
+			this.BodyFlatElement.ChangeForeColor(Color.WhiteSmoke);
 			this.UserNoticeElement.ChangeForeColor(Color.WhiteSmoke);
 			this.LookupButtonElement.ChangeBorder(ButtonColors.GreenYellow);
 			this.ExitButtonElement.ChangeBorder(ButtonColors.Red);
 			//enableds:
 			this.FirstFlatElement.Enable(true);
+			this.BodyFlatElement.Enable(true);
 			this.UserNoticeElement.Enable(true);
 			this.UserInputElement.Enable(true);
 			this.LookupButtonElement.Enable();
@@ -219,14 +228,18 @@ namespace SPB.Client
 			this.UserInputElement.Focus(true); // force it to focus itself
 			//texts:
 			this.FirstFlatElement.SetLabelText();
+			this.BodyFlatElement.SetLabelText("Hello");
 			this.UserNoticeElement.SetLabelText();
 			this.LookupButtonElement.SetLabelText();
 			this.ExitButtonElement.SetLabelText();
 			//images:
 			this.FirstFlatElement.ChangeImage();
+			//this.BodyFlatElement.ChangeImage();
 			//applyAndShow:
 			this.FirstFlatElement.Apply();
 			this.FirstFlatElement.Show();
+			this.BodyFlatElement.Apply();
+			this.BodyFlatElement.Show();
 			this.UserNoticeElement.Apply();
 			this.UserNoticeElement.Show();
 			this.UserInputElement.Apply();
@@ -237,10 +250,13 @@ namespace SPB.Client
 			this.ExitButtonElement.Show();
 			//events:
 			this.InitializeMainEvents();
+			this.LookupButtonElement.LeftClick += LookupButton_Click;
+			this.ExitButtonElement.LeftClick += ExitButton_Click;
 			//---------------------------------------------
 			//addRanges:
 			this.ElementManager.AddRange(
 				this.FirstFlatElement,
+				this.BodyFlatElement,
 				this.UserNoticeElement,
 				this.UserInputElement,
 				this.LookupButtonElement,
@@ -537,6 +553,60 @@ namespace SPB.Client
 			this.InputElement?.InputEvent(sender, e);
 			//this.FirstFlatElement.ChangeText(
 				//this.FirstFlatElement.Text.Append(e.Character, true));
+		}
+		
+		private void ExitButton_Click(object sender, EventArgs e)
+		{
+			this.Exit();
+		}
+
+		private void LookupButton_Click(object sender, EventArgs e)
+		{
+			var str = SPB.Security.StrongString.Empty;
+			IntelliCore.IntelliSpb data;
+            try
+            {
+                data = IntelliCore.Request.ApiRequest(this.UserInputElement.Text).Data;
+            }
+            catch
+            {
+                return;
+            }
+			if (data.Results == null)
+			{
+				return;
+			}
+			str = $"Entity Type: {data.Results.EntityType}\n";
+            str += $"Blacklisted: {data.Results.Attributes.IsBlacklisted}\n";
+            if (data.Results.Attributes.BlacklistFlag != null)
+            {
+                str += $"Blacklist Flag: {data.Results.Attributes.BlacklistFlag}\n";
+            }
+
+            if (data.Results.Attributes.BlacklistReason != null)
+            {
+                str += $"Blacklist Reason: {data.Results.Attributes.BlacklistReason}\n";
+            }
+
+            if (data.Results.Attributes.OriginalPrivateID != null)
+            {
+                str += $"Original PTID (only for 0xEVADE): {data.Results.Attributes.OriginalPrivateID}\n";
+            }
+
+            str += $"Official: {data.Results.Attributes.IsOfficial}\n";
+            str += $"Operator: {data.Results.Attributes.IsOperator}\n";
+            str += $"Whitelisted: {data.Results.Attributes.IsWhitelisted}\n";
+            str += $"Potential Spammer: {data.Results.Attributes.IsPotentialSpammer}\n";
+            str += $"Intellivoid Accounts verified: {data.Results.Attributes.IntellivoidAccountsVerified}\n";
+			if (data.Results.LangPrediction != null)
+			{
+				str += $"Language: {data.Results.LangPrediction.Language}";
+			}
+            
+
+            str += $"Private telegram ID: {data.Results.PrivateTelegramID}";
+			Console.WriteLine(str.GetValue());
+			this.BodyFlatElement?.SetLabelText(str);
 		}
 		#endregion
 		//-------------------------------------------------
