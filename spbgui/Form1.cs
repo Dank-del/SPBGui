@@ -17,13 +17,8 @@ namespace spbgui
             spbgui.backend.ApiClass data;
             try
             {
-                data = Request.ApiRequest(textBox1.Text).Data;
-            }
-            catch
-            {
-                MessageBox.Show("User not found.");
-                return;
-            }
+            data = Request.ApiRequest(textBox1.Text).Data;
+            
             //label2.Text = $"Private telegram ID: {data.Results.PrivateTelegramId}\n";
             label2.Text = $"Entity Type: {data.Results.EntityType}\n";
             label2.Text += $"Blacklisted: {data.Results.Attributes.IsBlacklisted}\n";
@@ -50,7 +45,12 @@ namespace spbgui
             label2.Text += $"Language: {data.Results.LanguagePrediction.Language}";
 
             label3.Text = $"Private telegram ID: {data.Results.PrivateTelegramId}";
-
+            }
+            catch (System.NullReferenceException)
+            {
+                MessageBox.Show(text:"User not found.", caption:"Notice");
+                return;
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -81,6 +81,28 @@ namespace spbgui
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var msg = "SpamProtection GUI, an app to get user, channel or chat information on Intellivoid SpamProtection API.\n";
+            msg += "The Intellivoid logo is a trademark of Intellivoid Technologies.\n";
+            msg += "Copyright ©  2021 Dank-Del, Intellivoid\n";
+            msg += "Website: Intellivoid.net\n";
+            msg += "Github: github.com/Intellivoid";
+            MessageBox.Show(text:msg, caption:"About", buttons:MessageBoxButtons.OK);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (label3.Text == "")
+            {
+                MessageBox.Show(text:"No PTID to be copied", caption:"ERROR", buttons:MessageBoxButtons.OK, icon:MessageBoxIcon.Error);
+            }
+            else
+            {
+                Clipboard.SetText(label3.Text);
+            }
         }
     }
 }
