@@ -136,7 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IMG_20210621_181147_828.ico" />
-    <None Include="intelliretrovoid.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -102,7 +102,7 @@ namespace spbgui
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::spbgui.Properties.Resources.intelliretrovoid;
+            this.pictureBox1.Image = global::spbgui.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(713, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 78);
