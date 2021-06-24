@@ -22,5 +22,30 @@ namespace spbgui.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://api.intellivoid.net/spamprotection/v1/lookup")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        public string api_endpoint {
+            get {
+                return ((string)(this["api_endpoint"]));
+            }
+            set {
+                this["api_endpoint"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool darkmode {
+            get {
+                return ((bool)(this["darkmode"]));
+            }
+            set {
+                this["darkmode"] = value;
+            }
+        }
     }
 }

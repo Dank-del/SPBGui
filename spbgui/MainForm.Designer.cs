@@ -29,162 +29,202 @@ namespace spbgui
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Okay = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            this.headerLabel = new System.Windows.Forms.Label();
+            this.mainMenu = new System.Windows.Forms.MainMenu(this.components);
+            this.fileMenuItem = new System.Windows.Forms.MenuItem();
+            this.footerPanel = new System.Windows.Forms.Panel();
+            this.aboutButton = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.searchLabel = new System.Windows.Forms.Label();
+            this.searchPanel = new System.Windows.Forms.Panel();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.apiEndpointPanel = new System.Windows.Forms.Panel();
+            this.apiEndpointTextBox = new System.Windows.Forms.TextBox();
+            this.apiEndpointLabel = new System.Windows.Forms.Label();
+            this.rememberEndpointCheckBox = new System.Windows.Forms.CheckBox();
+            this.footerPanel.SuspendLayout();
+            this.searchPanel.SuspendLayout();
+            this.apiEndpointPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // headerLabel
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(452, 234);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(336, 15);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.headerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.headerLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.headerLabel.Location = new System.Drawing.Point(11, 10);
+            this.headerLabel.Name = "headerLabel";
+            this.headerLabel.Size = new System.Drawing.Size(446, 31);
+            this.headerLabel.TabIndex = 2;
+            this.headerLabel.Text = "Search the SpamProtection Database";
+            this.headerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Okay
+            // mainMenu
             // 
-            this.Okay.BackColor = System.Drawing.Color.DimGray;
-            this.Okay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Okay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Okay.Location = new System.Drawing.Point(713, 260);
-            this.Okay.Name = "Okay";
-            this.Okay.Size = new System.Drawing.Size(75, 23);
-            this.Okay.TabIndex = 1;
-            this.Okay.Text = "Okay";
-            this.Okay.UseVisualStyleBackColor = false;
-            this.Okay.Click += new System.EventHandler(this.Okay_Click);
+            this.mainMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.fileMenuItem});
             // 
-            // label1
+            // fileMenuItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.MinimumSize = new System.Drawing.Size(100, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(317, 50);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "SpamProtection Search";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.fileMenuItem.Index = 0;
+            this.fileMenuItem.Text = "&File";
             // 
-            // label2
+            // footerPanel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 75);
-            this.label2.MinimumSize = new System.Drawing.Size(300, 200);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(300, 200);
-            this.label2.TabIndex = 3;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.footerPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.footerPanel.Controls.Add(this.aboutButton);
+            this.footerPanel.Controls.Add(this.searchButton);
+            this.footerPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.footerPanel.Location = new System.Drawing.Point(0, 167);
+            this.footerPanel.Name = "footerPanel";
+            this.footerPanel.Size = new System.Drawing.Size(489, 44);
+            this.footerPanel.TabIndex = 11;
             // 
-            // label3
+            // aboutButton
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 393);
-            this.label3.MinimumSize = new System.Drawing.Size(700, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(700, 30);
-            this.label3.TabIndex = 4;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.aboutButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aboutButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutButton.Location = new System.Drawing.Point(297, 8);
+            this.aboutButton.Name = "aboutButton";
+            this.aboutButton.Size = new System.Drawing.Size(88, 28);
+            this.aboutButton.TabIndex = 1;
+            this.aboutButton.Text = "About";
+            this.aboutButton.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // searchButton
             // 
-            this.pictureBox1.Image = global::spbgui.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(713, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 78);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchButton.Location = new System.Drawing.Point(391, 8);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(88, 28);
+            this.searchButton.TabIndex = 0;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // button1
+            // searchLabel
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(632, 260);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "About";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.searchLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.searchLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchLabel.Location = new System.Drawing.Point(0, 0);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(132, 25);
+            this.searchLabel.TabIndex = 12;
+            this.searchLabel.Text = "Username, ID, PTID:";
+            this.searchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button2
+            // searchPanel
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(718, 393);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 30);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Copy";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.searchPanel.Controls.Add(this.searchTextBox);
+            this.searchPanel.Controls.Add(this.searchLabel);
+            this.searchPanel.Location = new System.Drawing.Point(16, 125);
+            this.searchPanel.Name = "searchPanel";
+            this.searchPanel.Size = new System.Drawing.Size(452, 25);
+            this.searchPanel.TabIndex = 13;
             // 
-            // label4
+            // searchTextBox
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 301);
-            this.label4.MinimumSize = new System.Drawing.Size(300, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(300, 30);
-            this.label4.TabIndex = 8;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchTextBox.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextBox.Location = new System.Drawing.Point(132, 0);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(320, 25);
+            this.searchTextBox.TabIndex = 13;
             // 
-            // Form1
+            // apiEndpointPanel
+            // 
+            this.apiEndpointPanel.Controls.Add(this.apiEndpointTextBox);
+            this.apiEndpointPanel.Controls.Add(this.apiEndpointLabel);
+            this.apiEndpointPanel.Location = new System.Drawing.Point(16, 54);
+            this.apiEndpointPanel.Name = "apiEndpointPanel";
+            this.apiEndpointPanel.Size = new System.Drawing.Size(452, 25);
+            this.apiEndpointPanel.TabIndex = 14;
+            // 
+            // apiEndpointTextBox
+            // 
+            this.apiEndpointTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.apiEndpointTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllUrl;
+            this.apiEndpointTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.apiEndpointTextBox.Enabled = false;
+            this.apiEndpointTextBox.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apiEndpointTextBox.Location = new System.Drawing.Point(132, 0);
+            this.apiEndpointTextBox.Name = "apiEndpointTextBox";
+            this.apiEndpointTextBox.Size = new System.Drawing.Size(320, 25);
+            this.apiEndpointTextBox.TabIndex = 13;
+            this.apiEndpointTextBox.Text = "https://api.intellivoid.net/spamprotection/v1/lookup";
+            // 
+            // apiEndpointLabel
+            // 
+            this.apiEndpointLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.apiEndpointLabel.Enabled = false;
+            this.apiEndpointLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apiEndpointLabel.Location = new System.Drawing.Point(0, 0);
+            this.apiEndpointLabel.Name = "apiEndpointLabel";
+            this.apiEndpointLabel.Size = new System.Drawing.Size(132, 25);
+            this.apiEndpointLabel.TabIndex = 12;
+            this.apiEndpointLabel.Text = "API Endpoint:";
+            this.apiEndpointLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // rememberEndpointCheckBox
+            // 
+            this.rememberEndpointCheckBox.AutoSize = true;
+            this.rememberEndpointCheckBox.Enabled = false;
+            this.rememberEndpointCheckBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.rememberEndpointCheckBox.Location = new System.Drawing.Point(148, 85);
+            this.rememberEndpointCheckBox.Name = "rememberEndpointCheckBox";
+            this.rememberEndpointCheckBox.Size = new System.Drawing.Size(178, 19);
+            this.rememberEndpointCheckBox.TabIndex = 15;
+            this.rememberEndpointCheckBox.Text = "Remember this API Endpoint";
+            this.rememberEndpointCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Okay);
-            this.Controls.Add(this.textBox1);
-            this.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.Icon = ((System.Drawing.Icon)(spbgui.Properties.Resources.AppIcon));
-            this.Name = "Form1";
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(489, 211);
+            this.Controls.Add(this.rememberEndpointCheckBox);
+            this.Controls.Add(this.apiEndpointPanel);
+            this.Controls.Add(this.searchPanel);
+            this.Controls.Add(this.footerPanel);
+            this.Controls.Add(this.headerLabel);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = global::spbgui.Properties.Resources.AppIcon;
+            this.MaximizeBox = false;
+            this.Menu = this.mainMenu;
+            this.Name = "MainForm";
             this.Text = "SpamProtection GUI";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.footerPanel.ResumeLayout(false);
+            this.searchPanel.ResumeLayout(false);
+            this.searchPanel.PerformLayout();
+            this.apiEndpointPanel.ResumeLayout(false);
+            this.apiEndpointPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button Okay;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label headerLabel;
+        private System.Windows.Forms.MainMenu mainMenu;
+        private System.Windows.Forms.MenuItem fileMenuItem;
+        private System.Windows.Forms.Panel footerPanel;
+        private System.Windows.Forms.Button aboutButton;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Label searchLabel;
+        private System.Windows.Forms.Panel searchPanel;
+        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.Panel apiEndpointPanel;
+        private System.Windows.Forms.TextBox apiEndpointTextBox;
+        private System.Windows.Forms.Label apiEndpointLabel;
+        private System.Windows.Forms.CheckBox rememberEndpointCheckBox;
     }
 }
 
