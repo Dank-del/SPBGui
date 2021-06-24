@@ -1,17 +1,51 @@
 ﻿using System;
 using System.Windows.Forms;
 using spbgui.backend;
-using RestSharp;
 
 namespace spbgui
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+
+        /// <summary>
+        /// Public Constructor
+        /// </summary>
+        public MainForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Executes the search query against the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            if (searchTextBox.Text.Length == 0)
+            {
+                MessageBox.Show(text: "The search query cannot be empty!", caption: "Invalid Input", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            ApiClass data;
+
+            try
+            {
+                data = Request.ApiRequest(searchTextBox.Text).Data;
+                SearchResultsForm resultsForm = new SearchResultsForm(data, searchTextBox.Text);
+                resultsForm.Show();
+
+                searchTextBox.Text = string.Empty;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show(text: "User not found.", caption: "Notice", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Exclamation);
+                return;
+            }
+        }
+
+        /**
         private void Okay_Click(object sender, EventArgs e)
         {
             label2.Text = "";
@@ -64,36 +98,6 @@ namespace spbgui
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             var msg = "SpamProtection GUI, an app to get user, channel or chat information on Intellivoid SpamProtection API.\n";
@@ -116,9 +120,7 @@ namespace spbgui
             }
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
+        **/
 
-        }
     }
 }
