@@ -135,6 +135,7 @@ namespace spbgui
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(320, 25);
             this.searchTextBox.TabIndex = 13;
+            this.searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTextBox_KeyDown);
             // 
             // apiEndpointPanel
             // 

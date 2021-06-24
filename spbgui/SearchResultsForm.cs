@@ -125,5 +125,23 @@ namespace spbgui
                 return;
             }
         }
+
+        /// <summary>
+        /// Copies the selected text to the clipboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripItem item = (sender as ToolStripItem);
+            if (item != null)
+            {
+                ContextMenuStrip owner = item.Owner as ContextMenuStrip;
+                if (owner != null)
+                {
+                    Clipboard.SetText(owner.SourceControl.Text);
+                }
+            }
+        }
     }
 }
