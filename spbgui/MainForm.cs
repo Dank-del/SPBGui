@@ -45,6 +45,19 @@ namespace spbgui
             }
         }
 
+        /// <summary>
+        /// Submits on "Enter" key
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void searchTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchButton_Click(this, new EventArgs());
+            }
+        }
+
         /**
         private void Okay_Click(object sender, EventArgs e)
         {

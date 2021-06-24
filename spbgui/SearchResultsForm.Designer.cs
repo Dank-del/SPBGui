@@ -29,10 +29,13 @@ namespace spbgui
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.generalTabPage = new System.Windows.Forms.TabPage();
             this.intellivoidAccountsPanel = new System.Windows.Forms.Panel();
             this.intellivoidAccountsValueLabel = new System.Windows.Forms.Label();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.intellivoidAccountsLabel = new System.Windows.Forms.Label();
             this.whitelistedPanel = new System.Windows.Forms.Panel();
             this.whitelistedValueLabel = new System.Windows.Forms.Label();
@@ -71,6 +74,7 @@ namespace spbgui
             this.mainTabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.intellivoidAccountsPanel.SuspendLayout();
+            this.contextMenuStrip.SuspendLayout();
             this.whitelistedPanel.SuspendLayout();
             this.operatorPanel.SuspendLayout();
             this.officialPanel.SuspendLayout();
@@ -118,6 +122,8 @@ namespace spbgui
             // 
             // intellivoidAccountsPanel
             // 
+            this.intellivoidAccountsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.intellivoidAccountsPanel.Controls.Add(this.intellivoidAccountsValueLabel);
             this.intellivoidAccountsPanel.Controls.Add(this.intellivoidAccountsLabel);
             this.intellivoidAccountsPanel.Location = new System.Drawing.Point(16, 129);
@@ -127,6 +133,7 @@ namespace spbgui
             // 
             // intellivoidAccountsValueLabel
             // 
+            this.intellivoidAccountsValueLabel.ContextMenuStrip = this.contextMenuStrip;
             this.intellivoidAccountsValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.intellivoidAccountsValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.intellivoidAccountsValueLabel.Location = new System.Drawing.Point(157, 0);
@@ -135,6 +142,20 @@ namespace spbgui
             this.intellivoidAccountsValueLabel.TabIndex = 14;
             this.intellivoidAccountsValueLabel.Text = "N/A";
             this.intellivoidAccountsValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // contextMenuStrip
+            // 
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyToolStripMenuItem});
+            this.contextMenuStrip.Name = "contextMenuStrip";
+            this.contextMenuStrip.Size = new System.Drawing.Size(181, 48);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem.Text = "Copy to clipboard";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // intellivoidAccountsLabel
             // 
@@ -150,6 +171,8 @@ namespace spbgui
             // 
             // whitelistedPanel
             // 
+            this.whitelistedPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.whitelistedPanel.Controls.Add(this.whitelistedValueLabel);
             this.whitelistedPanel.Controls.Add(this.whitelistedLabel);
             this.whitelistedPanel.Location = new System.Drawing.Point(16, 110);
@@ -159,6 +182,7 @@ namespace spbgui
             // 
             // whitelistedValueLabel
             // 
+            this.whitelistedValueLabel.ContextMenuStrip = this.contextMenuStrip;
             this.whitelistedValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.whitelistedValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.whitelistedValueLabel.Location = new System.Drawing.Point(69, 0);
@@ -182,6 +206,8 @@ namespace spbgui
             // 
             // operatorPanel
             // 
+            this.operatorPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.operatorPanel.Controls.Add(this.operatorValueLabel);
             this.operatorPanel.Controls.Add(this.operatorLabel);
             this.operatorPanel.Location = new System.Drawing.Point(16, 91);
@@ -191,6 +217,7 @@ namespace spbgui
             // 
             // operatorValueLabel
             // 
+            this.operatorValueLabel.ContextMenuStrip = this.contextMenuStrip;
             this.operatorValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.operatorValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.operatorValueLabel.Location = new System.Drawing.Point(57, 0);
@@ -214,6 +241,8 @@ namespace spbgui
             // 
             // officialPanel
             // 
+            this.officialPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.officialPanel.Controls.Add(this.officialValueLabel);
             this.officialPanel.Controls.Add(this.officialLabel);
             this.officialPanel.Location = new System.Drawing.Point(16, 72);
@@ -223,6 +252,7 @@ namespace spbgui
             // 
             // officialValueLabel
             // 
+            this.officialValueLabel.ContextMenuStrip = this.contextMenuStrip;
             this.officialValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.officialValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.officialValueLabel.Location = new System.Drawing.Point(48, 0);
@@ -246,6 +276,8 @@ namespace spbgui
             // 
             // blacklistedPanel
             // 
+            this.blacklistedPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.blacklistedPanel.Controls.Add(this.blacklistedValueLabel);
             this.blacklistedPanel.Controls.Add(this.blacklistedLabel);
             this.blacklistedPanel.Location = new System.Drawing.Point(16, 53);
@@ -255,6 +287,7 @@ namespace spbgui
             // 
             // blacklistedValueLabel
             // 
+            this.blacklistedValueLabel.ContextMenuStrip = this.contextMenuStrip;
             this.blacklistedValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.blacklistedValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.blacklistedValueLabel.Location = new System.Drawing.Point(66, 0);
@@ -278,6 +311,8 @@ namespace spbgui
             // 
             // entityTypePanel
             // 
+            this.entityTypePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.entityTypePanel.Controls.Add(this.entityTypeValueLabel);
             this.entityTypePanel.Controls.Add(this.entityTypeLabel);
             this.entityTypePanel.Location = new System.Drawing.Point(16, 34);
@@ -287,6 +322,7 @@ namespace spbgui
             // 
             // entityTypeValueLabel
             // 
+            this.entityTypeValueLabel.ContextMenuStrip = this.contextMenuStrip;
             this.entityTypeValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.entityTypeValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entityTypeValueLabel.Location = new System.Drawing.Point(67, 0);
@@ -310,6 +346,8 @@ namespace spbgui
             // 
             // ptidPanel
             // 
+            this.ptidPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ptidPanel.Controls.Add(this.ptidValueLabel);
             this.ptidPanel.Controls.Add(this.ptidLabel);
             this.ptidPanel.Location = new System.Drawing.Point(16, 15);
@@ -319,6 +357,7 @@ namespace spbgui
             // 
             // ptidValueLabel
             // 
+            this.ptidValueLabel.ContextMenuStrip = this.contextMenuStrip;
             this.ptidValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ptidValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ptidValueLabel.Location = new System.Drawing.Point(111, 0);
@@ -369,6 +408,8 @@ namespace spbgui
             // 
             // originalPtidBlacklistPanel
             // 
+            this.originalPtidBlacklistPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.originalPtidBlacklistPanel.Controls.Add(this.originalPtidBlacklistValueLabel);
             this.originalPtidBlacklistPanel.Controls.Add(this.originalPtidBlacklistLabel);
             this.originalPtidBlacklistPanel.Location = new System.Drawing.Point(16, 53);
@@ -378,6 +419,7 @@ namespace spbgui
             // 
             // originalPtidBlacklistValueLabel
             // 
+            this.originalPtidBlacklistValueLabel.ContextMenuStrip = this.contextMenuStrip;
             this.originalPtidBlacklistValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.originalPtidBlacklistValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.originalPtidBlacklistValueLabel.Location = new System.Drawing.Point(105, 0);
@@ -401,6 +443,8 @@ namespace spbgui
             // 
             // blacklistPanel
             // 
+            this.blacklistPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.blacklistPanel.Controls.Add(this.blacklistFlagValueLabel);
             this.blacklistPanel.Controls.Add(this.blacklistFlagLabel);
             this.blacklistPanel.Location = new System.Drawing.Point(16, 34);
@@ -410,6 +454,7 @@ namespace spbgui
             // 
             // blacklistFlagValueLabel
             // 
+            this.blacklistFlagValueLabel.ContextMenuStrip = this.contextMenuStrip;
             this.blacklistFlagValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.blacklistFlagValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.blacklistFlagValueLabel.Location = new System.Drawing.Point(32, 0);
@@ -433,6 +478,8 @@ namespace spbgui
             // 
             // blacklistReasonPanel
             // 
+            this.blacklistReasonPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.blacklistReasonPanel.Controls.Add(this.blacklistReasonValueLabel);
             this.blacklistReasonPanel.Controls.Add(this.blacklistReasonLabel);
             this.blacklistReasonPanel.Location = new System.Drawing.Point(16, 15);
@@ -442,6 +489,7 @@ namespace spbgui
             // 
             // blacklistReasonValueLabel
             // 
+            this.blacklistReasonValueLabel.ContextMenuStrip = this.contextMenuStrip;
             this.blacklistReasonValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.blacklistReasonValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.blacklistReasonValueLabel.Location = new System.Drawing.Point(48, 0);
@@ -476,6 +524,8 @@ namespace spbgui
             // 
             // languagePanel
             // 
+            this.languagePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.languagePanel.Controls.Add(this.languageValueLabel);
             this.languagePanel.Controls.Add(this.languageLabel);
             this.languagePanel.Location = new System.Drawing.Point(16, 15);
@@ -485,6 +535,7 @@ namespace spbgui
             // 
             // languageValueLabel
             // 
+            this.languageValueLabel.ContextMenuStrip = this.contextMenuStrip;
             this.languageValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.languageValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.languageValueLabel.Location = new System.Drawing.Point(62, 0);
@@ -534,6 +585,7 @@ namespace spbgui
             this.generalTabPage.ResumeLayout(false);
             this.intellivoidAccountsPanel.ResumeLayout(false);
             this.intellivoidAccountsPanel.PerformLayout();
+            this.contextMenuStrip.ResumeLayout(false);
             this.whitelistedPanel.ResumeLayout(false);
             this.whitelistedPanel.PerformLayout();
             this.operatorPanel.ResumeLayout(false);
@@ -601,5 +653,7 @@ namespace spbgui
         private System.Windows.Forms.Label languageValueLabel;
         private System.Windows.Forms.Label languageLabel;
         private System.Windows.Forms.Button resolveIdButton;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
     }
 }
