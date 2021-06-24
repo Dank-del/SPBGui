@@ -164,7 +164,7 @@ namespace spbgui
             this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(spbgui.Properties.Resources.AppIcon));
             this.Name = "Form1";
             this.Text = "SpamProtection GUI";
             this.Load += new System.EventHandler(this.Form1_Load);
