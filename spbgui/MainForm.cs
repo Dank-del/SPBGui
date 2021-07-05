@@ -58,6 +58,16 @@ namespace spbgui
             }
         }
 
+        private void aboutButton_Click(object sender, EventArgs e)
+        {
+            var msg = "SpamProtection GUI, an app to get user, channel or chat information on Intellivoid SpamProtection API.\n";
+            msg += "The Intellivoid logo is a trademark of Intellivoid Technologies.\n";
+            msg += "Copyright ©  2021 Dank-Del, Intellivoid\n";
+            msg += "Website: Intellivoid.net\n";
+            msg += "Github: github.com/Intellivoid";
+            MessageBox.Show(text: msg, caption: "About", buttons: MessageBoxButtons.OK, icon:MessageBoxIcon.Information);
+        }
+
         /**
         private void Okay_Click(object sender, EventArgs e)
         {

@@ -93,6 +93,7 @@ namespace spbgui
             this.aboutButton.TabIndex = 1;
             this.aboutButton.Text = "About";
             this.aboutButton.UseVisualStyleBackColor = true;
+            this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
             // 
             // searchButton
             // 
