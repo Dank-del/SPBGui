@@ -200,7 +200,9 @@ namespace spbgui
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = global::spbgui.Properties.Resources.AppIcon;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(505, 271);
             this.Menu = this.mainMenu;
+            this.MinimumSize = new System.Drawing.Size(505, 271);
             this.Name = "MainForm";
             this.Text = "SpamProtection GUI";
             this.footerPanel.ResumeLayout(false);
