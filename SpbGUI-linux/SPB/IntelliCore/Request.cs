@@ -1,5 +1,5 @@
 using RestSharp;
-using SPB.Security;
+using GUISharp.Security;
 
 namespace SPB.IntelliCore
 {

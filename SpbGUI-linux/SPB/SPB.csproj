@@ -62,33 +62,13 @@
 	</ItemGroup>
 	<!--===================================================-->
 	<ItemGroup>
+		<PackageReference Include="GUISharp" Version="1.0.35" />
 		<PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
 		<PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.0.1641" />
 		<PackageReference Include="RestSharp" Version="106.11.7" />
 	</ItemGroup>
 	<!--===================================================-->
 	<ItemGroup>
-		<!--======================-->
-		<Reference Include="Octokit, Version=0.50.0.0, Culture=neutral, PublicKeyToken=null">
-			<HintPath>..\octokit\0.50.0\lib\netstandard2.0\Octokit.dll</HintPath>
-		</Reference>
-		<!--======================-->
-		<Reference Include="FontStashSharp">
-			<HintPath>..\references\FontStashSharp.MonoGame\FontStashSharp.MonoGame.dll</HintPath>
-		</Reference>
-		<!--======================-->
-		<Reference Include="Cyotek.Drawing.BitmapFont">
-			<HintPath>..\references\Cyotek.Drawing.BitmapFont\Cyotek.Drawing.BitmapFont.dll</HintPath>
-		</Reference>
-		<!--======================-->
-		<Reference Include="StbImageSharp">
-			<HintPath>..\references\StbImageSharp\StbImageSharp.dll</HintPath>
-		</Reference>
-		<!--======================-->
-		<Reference Include="StbTrueTypeSharp">
-			<HintPath>..\references\StbTrueTypeSharp\StbTrueTypeSharp.dll</HintPath>
-		</Reference>
-		<!--======================-->
 	</ItemGroup>
 	<!--===================================================-->
 	<ItemGroup>
