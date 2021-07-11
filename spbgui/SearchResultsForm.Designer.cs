@@ -590,6 +590,7 @@ namespace spbgui
             // 
             // spamValueLabel
             // 
+            this.spamValueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.spamValueLabel.ContextMenuStrip = this.contextMenuStrip;
             this.spamValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spamValueLabel.Location = new System.Drawing.Point(62, 34);
@@ -612,6 +613,7 @@ namespace spbgui
             // 
             // hamValueLabel
             // 
+            this.hamValueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.hamValueLabel.ContextMenuStrip = this.contextMenuStrip;
             this.hamValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hamValueLabel.Location = new System.Drawing.Point(62, 50);
