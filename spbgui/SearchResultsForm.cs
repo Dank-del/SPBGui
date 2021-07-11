@@ -90,6 +90,12 @@ namespace spbgui
             if (apiClass.Results.LanguagePrediction.Language != null)
                 languageValueLabel.Text = apiClass.Results.LanguagePrediction.Language;
 
+            if (apiClass.Results.SpamPrediction.SpamPredictionSpamPrediction != 0)
+                spamValueLabel.Text = $"{apiClass.Results.SpamPrediction.SpamPredictionSpamPrediction}";
+
+            if (apiClass.Results.SpamPrediction.HamPrediction != 0)
+                hamValueLabel.Text = $"{apiClass.Results.SpamPrediction.HamPrediction}";
+
         }
 
 
