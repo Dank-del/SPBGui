@@ -2,7 +2,7 @@
 
 namespace spbgui.backend
 {
-    public partial class ApiClass
+    public class ApiClass
     {
         [JsonProperty("success")]
         public bool Success { get; set; }
@@ -17,7 +17,7 @@ namespace spbgui.backend
         public ErrorClass ErrorError { get; set; }
     }
 
-    public partial class ErrorClass
+    public class ErrorClass
     {
         [JsonProperty("error_code")]
         public long ErrorCode { get; set; }
@@ -29,7 +29,7 @@ namespace spbgui.backend
         public string Message { get; set; }
     }
 
-    public partial class Results
+    public class Results
     {
         [JsonProperty("private_telegram_id")]
         public string PrivateTelegramId { get; set; }
@@ -50,7 +50,7 @@ namespace spbgui.backend
         public long LastUpdated { get; set; }
     }
 
-    public partial class Attributes
+    public class Attributes
     {
         [JsonProperty("is_blacklisted")]
         public bool IsBlacklisted { get; set; }
@@ -83,7 +83,7 @@ namespace spbgui.backend
         public bool IsOfficial { get; set; }
     }
 
-    public partial class LanguagePrediction
+    public class LanguagePrediction
     {
         [JsonProperty("language")]
         public string Language { get; set; }
@@ -92,7 +92,7 @@ namespace spbgui.backend
         public double Probability { get; set; }
     }
 
-    public partial class SpamPrediction
+    public class SpamPrediction
     {
         [JsonProperty("ham_prediction")]
         public double HamPrediction { get; set; }

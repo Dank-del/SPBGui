@@ -20,7 +20,7 @@ namespace spbgui
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void searchButton_Click(object sender, EventArgs e)
+        private async void SearchButton_Click(object sender, EventArgs e)
         {
             if (searchTextBox.Text.Length == 0)
             {
@@ -32,7 +32,7 @@ namespace spbgui
 
             try
             {
-                data = Request.ApiRequest(searchTextBox.Text).Data;
+                data = await Request.ApiRequest(searchTextBox.Text);
                 SearchResultsForm resultsForm = new SearchResultsForm(data, searchTextBox.Text);
                 resultsForm.Show();
 
@@ -50,15 +50,15 @@ namespace spbgui
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void searchTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void SearchTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                searchButton_Click(this, new EventArgs());
+                SearchButton_Click(this, new EventArgs());
             }
         }
 
-        private void aboutButton_Click(object sender, EventArgs e)
+        private void AboutButton_Click(object sender, EventArgs e)
         {
             var msg = "SpamProtection GUI, an app to get user, channel or chat information on Intellivoid SpamProtection API.\n";
             msg += "The Intellivoid logo is a trademark of Intellivoid Technologies.\n";

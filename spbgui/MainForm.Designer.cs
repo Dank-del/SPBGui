@@ -106,7 +106,7 @@ namespace spbgui
             this.searchButton.TabIndex = 0;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // searchLabel
             // 
@@ -136,7 +136,7 @@ namespace spbgui
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(320, 25);
             this.searchTextBox.TabIndex = 13;
-            this.searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTextBox_KeyDown);
+            this.searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
             // 
             // apiEndpointPanel
             // 

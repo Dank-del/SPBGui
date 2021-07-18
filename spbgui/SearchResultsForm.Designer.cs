@@ -159,7 +159,7 @@ namespace spbgui
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.copyToolStripMenuItem.Text = "Copy to clipboard";
-            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
             // 
             // intellivoidAccountsLabel
             // 
@@ -408,7 +408,7 @@ namespace spbgui
             this.resolveIdButton.TabIndex = 10;
             this.resolveIdButton.Text = "Resolve ID...";
             this.resolveIdButton.UseVisualStyleBackColor = true;
-            this.resolveIdButton.Click += new System.EventHandler(this.resolveIdButton_Click);
+            this.resolveIdButton.Click += new System.EventHandler(this.ResolveIdButton_Click);
             // 
             // originalPtidBlacklistPanel
             // 
@@ -575,7 +575,7 @@ namespace spbgui
             this.closeButton.TabIndex = 1;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // SpamLabel
             // 
