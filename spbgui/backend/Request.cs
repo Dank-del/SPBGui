@@ -1,18 +1,32 @@
-﻿using RestSharp;
-
+﻿using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using RestSharp;
 
 namespace spbgui.backend
 {
     public class Request
     {
-        public static IRestResponse<ApiClass> ApiRequest(string param)
+        public static async Task<ApiClass> ApiRequest(string param)
         {
-            var client = new RestClient("https://api.intellivoid.net");
-            var req = new RestRequest($"spamprotection/v1/lookup?query={param}", Method.GET);
-            req.AddHeader("User-Agent", "SpamProtection GUI");
+            var client = new HttpClient();
+            var url = "https://api.intellivoid.net" + $"spamprotection/v1/lookup?query={param}";
+            var s = new HttpRequestMessage(HttpMethod.Get, url);
+            s.Headers.Add("User-Agent", "SpamProtection GUI");
+            var resp = await client.SendAsync(s);
+            if (resp == null || resp.Content == null)
+            {
+                return null;
+            }
 
-            var data = client.Execute<ApiClass>(req);
-            return data;
+            var str = await resp.Content.ReadAsStringAsync();
+            if (string.IsNullOrEmpty(str))
+            {
+                return null;
+            }
+
+            return SimpleJson.DeserializeObject<ApiClass>(str);
+
         }
     }
 }
