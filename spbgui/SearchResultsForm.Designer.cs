@@ -71,6 +71,10 @@ namespace spbgui
             this.languageValueLabel = new System.Windows.Forms.Label();
             this.languageLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Button();
+            this.SpamLabel = new System.Windows.Forms.Label();
+            this.spamValueLabel = new System.Windows.Forms.Label();
+            this.hamLabel = new System.Windows.Forms.Label();
+            this.hamValueLabel = new System.Windows.Forms.Label();
             this.mainTabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.intellivoidAccountsPanel.SuspendLayout();
@@ -513,6 +517,10 @@ namespace spbgui
             // 
             // predictionsTabPage
             // 
+            this.predictionsTabPage.Controls.Add(this.hamValueLabel);
+            this.predictionsTabPage.Controls.Add(this.hamLabel);
+            this.predictionsTabPage.Controls.Add(this.spamValueLabel);
+            this.predictionsTabPage.Controls.Add(this.SpamLabel);
             this.predictionsTabPage.Controls.Add(this.languagePanel);
             this.predictionsTabPage.Location = new System.Drawing.Point(4, 22);
             this.predictionsTabPage.Name = "predictionsTabPage";
@@ -569,6 +577,52 @@ namespace spbgui
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // SpamLabel
+            // 
+            this.SpamLabel.AutoSize = true;
+            this.SpamLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpamLabel.Location = new System.Drawing.Point(16, 34);
+            this.SpamLabel.Name = "SpamLabel";
+            this.SpamLabel.Size = new System.Drawing.Size(40, 15);
+            this.SpamLabel.TabIndex = 15;
+            this.SpamLabel.Text = "Spam:";
+            this.SpamLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // spamValueLabel
+            // 
+            this.spamValueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.spamValueLabel.ContextMenuStrip = this.contextMenuStrip;
+            this.spamValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spamValueLabel.Location = new System.Drawing.Point(62, 34);
+            this.spamValueLabel.Name = "spamValueLabel";
+            this.spamValueLabel.Size = new System.Drawing.Size(285, 16);
+            this.spamValueLabel.TabIndex = 16;
+            this.spamValueLabel.Text = "N/A";
+            this.spamValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // hamLabel
+            // 
+            this.hamLabel.AutoSize = true;
+            this.hamLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hamLabel.Location = new System.Drawing.Point(16, 50);
+            this.hamLabel.Name = "hamLabel";
+            this.hamLabel.Size = new System.Drawing.Size(36, 15);
+            this.hamLabel.TabIndex = 17;
+            this.hamLabel.Text = "Ham:";
+            this.hamLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // hamValueLabel
+            // 
+            this.hamValueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.hamValueLabel.ContextMenuStrip = this.contextMenuStrip;
+            this.hamValueLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hamValueLabel.Location = new System.Drawing.Point(62, 50);
+            this.hamValueLabel.Name = "hamValueLabel";
+            this.hamValueLabel.Size = new System.Drawing.Size(285, 16);
+            this.hamValueLabel.TabIndex = 18;
+            this.hamValueLabel.Text = "N/A";
+            this.hamValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // SearchResultsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -606,6 +660,7 @@ namespace spbgui
             this.blacklistReasonPanel.ResumeLayout(false);
             this.blacklistReasonPanel.PerformLayout();
             this.predictionsTabPage.ResumeLayout(false);
+            this.predictionsTabPage.PerformLayout();
             this.languagePanel.ResumeLayout(false);
             this.languagePanel.PerformLayout();
             this.ResumeLayout(false);
@@ -655,5 +710,9 @@ namespace spbgui
         private System.Windows.Forms.Button resolveIdButton;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.Label spamValueLabel;
+        private System.Windows.Forms.Label SpamLabel;
+        private System.Windows.Forms.Label hamValueLabel;
+        private System.Windows.Forms.Label hamLabel;
     }
 }
