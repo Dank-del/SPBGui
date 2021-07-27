@@ -90,10 +90,10 @@ namespace spbgui
             if (apiClass.Results.LanguagePrediction.Language != null)
                 languageValueLabel.Text = apiClass.Results.LanguagePrediction.Language;
 
-            if (apiClass.Results.SpamPrediction.SpamPredictionSpamPrediction != 0)
+            if (apiClass.Results.SpamPrediction.SpamPredictionSpamPrediction > 0)
                 spamValueLabel.Text = $"{apiClass.Results.SpamPrediction.SpamPredictionSpamPrediction}";
 
-            if (apiClass.Results.SpamPrediction.HamPrediction != 0)
+            if (apiClass.Results.SpamPrediction.HamPrediction > 0)
                 hamValueLabel.Text = $"{apiClass.Results.SpamPrediction.HamPrediction}";
 
         }
@@ -104,7 +104,7 @@ namespace spbgui
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void closeButton_Click(object sender, System.EventArgs e)
+        private void CloseButton_Click(object sender, System.EventArgs e)
         {
             Close();
         }
@@ -115,13 +115,13 @@ namespace spbgui
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void resolveIdButton_Click(object sender, System.EventArgs e)
+        private async void ResolveIdButton_Click(object sender, System.EventArgs e)
         {
             ApiClass data;
 
             try
             {
-                data = Request.ApiRequest((string)resolveIdButton.Tag).Data;
+                data = await Request.ApiRequest((string)resolveIdButton.Tag);
                 SearchResultsForm resultsForm = new SearchResultsForm(data, (string)resolveIdButton.Tag);
                 resultsForm.Show();
             }
@@ -137,16 +137,15 @@ namespace spbgui
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ToolStripItem item = (sender as ToolStripItem);
-            if (item != null)
+            if (sender is ToolStripItem item)
             {
-                ContextMenuStrip owner = item.Owner as ContextMenuStrip;
-                if (owner != null)
+                if (item.Owner is ContextMenuStrip owner)
                 {
                     Clipboard.SetText(owner.SourceControl.Text);
                 }
+
             }
         }
     }
